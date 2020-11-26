@@ -23,6 +23,7 @@ Open yet another new terminal and execute the following commands:
 ./curl_read_all_questions.sh 
 ./test_delete_all_questions.sh
 ./curl_read_all_questions.sh 
+./start_godoc.sh
 ```
 
 ## Directory Structure
