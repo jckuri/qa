@@ -33,9 +33,11 @@ type QA struct {
 }
 ```
 
-Then, some function were implemented in order to access the database with CRUD operations: Create, Read, Update, and Delete.
+Then, some functions were implemented in order to access the MongoDB with CRUD operations: Create, Read, Update, and Delete.
 
-After that, microservices were implemented in order to expose the CRUD operations to the Internet. First, the server side was implemented, and then, the client side. Marshal and unmarshal were needed in order to convert Golang structures to JSON representations, back and forth.
+After that, GoKit microservices were implemented in order to expose the CRUD operations to the Internet. First, the server side was implemented, and then, the client side. Marshal and unmarshal were needed in order to convert Golang structures to JSON representations, back and forth.
+
+Finally, the remote API of GoKit microservices was tested in the client side with the script `test_all.sh`. Since GoKit microservices are exposed to the Internet, it is also possible to access them via the `curl` command in this script `curl_read_all_questions.sh `.
 
 ## Installation
 
