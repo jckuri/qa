@@ -55,7 +55,7 @@ Finally, the remote API of GoKit microservices was tested in the client side wit
 
 ## Installation
 
-Prerequisites: Golang <https://golang.org/> and Docker <https://www.docker.com/>.
+**Prerequisites:** Golang <https://golang.org/> and Docker <https://www.docker.com/>.
 
 Open a new terminal and execute the following commands:
 
