@@ -37,6 +37,20 @@ Then, some functions were implemented in order to access the MongoDB with CRUD o
 
 After that, GoKit microservices were implemented in order to expose the CRUD operations to the Internet. First, the server side was implemented, and then, the client side. Marshal and unmarshal were needed in order to convert Golang structures to JSON representations, back and forth.
 
+```
+// Service is an interface with many abstract functions.
+type Service interface {
+    ReadQuestion(ctx context.Context, id string) (qa_db.QA, error)
+    ReadAllQuestions(ctx context.Context) ([]qa_db.QA, error)
+    CreateQuestion(ctx context.Context, qa1 qa_db.QA) (qa_db.QA, error)
+    UpdateQuestion(ctx context.Context, qa1 qa_db.QA) error
+    DeleteQuestion(ctx context.Context, id string) error
+    DeleteAllQuestions(ctx context.Context) error
+    ReadQuestionsOfUser(ctx context.Context, quser string) ([]qa_db.QA, error)
+    ReadAnswersOfUser(ctx context.Context, auser string) ([]qa_db.QA, error)
+}
+```
+
 Finally, the remote API of GoKit microservices was tested in the client side with the script `test_all.sh`. Since GoKit microservices are exposed to the Internet, it is also possible to access them via the `curl` command in this script `curl_read_all_questions.sh `.
 
 ## Installation
