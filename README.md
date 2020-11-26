@@ -18,6 +18,25 @@ No user tracking or security needed for this version. Database design is up to y
 
 We would like to receive code that runs, so remember to focus on the MVP functionality. You can document what’s missing that you wish you had more time for? Please think about the different problems you might encounter if the business idea is successful. This would include considerations such as increased load, increased data, and an upvoting feature.
 
+## Solution
+
+Since this website does not require authentication, the database could be very simple requiring just one table:
+
+```
+// QA is a structure to store Questions with their Answers.
+type QA struct {
+    Id string `bson:"id"` // Id is a string that represents the QA.
+    Question string `bson:"question"` // Question is a string that contains the question.
+    QUser string `bson:"quser"` // QUser is the user who asked the question.
+    Answer string `bson:"answer"` // Answer is a string that contains the answer to the question.
+    AUser string `bson:"auser"` // AUser is the user who answered the question.
+}
+```
+
+Then, some function were implemented in order to access the database with CRUD operations: Create, Read, Update, and Delete.
+
+After that, microservices were implemented in order to expose the CRUD operations to the Internet. First, the server side was implemented, and then, the client side. Marshal and unmarshal were needed in order to convert Golang structures to JSON representations, back and forth.
+
 ## Installation
 
 Open a new terminal and execute the following commands:
